@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Solana DEX App
+
+A Solana token dashboard and swap interface built with Next.js, Prisma, NextAuth, and Solana Web3.
+
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![React](https://img.shields.io/badge/React-18-61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748)
+![Solana](https://img.shields.io/badge/Solana-14F195)
+
+## Project Preview
+
+This app includes a landing page, Google sign-in, authenticated dashboard, token list, profile card, and swap interface.
+
+Screenshots can be added in a future `screenshots/` folder:
+
+- Landing page
+- Dashboard
+- Swap screen
+
+## Features
+
+- Google OAuth authentication with NextAuth.
+- Prisma database layer for users, accounts, and sessions.
+- Token list and swap-focused UI.
+- Authenticated dashboard experience.
+- Solana Web3 and SPL Token dependencies for blockchain integration.
+- Production deployment guide and improvement roadmap.
+
+## Tech Stack
+
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS
+- NextAuth
+- Prisma
+- PostgreSQL
+- Solana Web3.js
+- Solana SPL Token
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create an environment file:
+
+```bash
+cp .env.example .env
+```
+
+Run Prisma setup:
+
+```bash
+npx prisma generate
+npx prisma migrate dev
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Environment Variables
 
-## Learn More
+```bash
+DATABASE_URL=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+NEXTAUTH_URL=
+NEXTAUTH_SECRET=
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Documentation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Project Overview](./OVERVIEW.md)
+- [Deployment Guide](./DEPLOYMENT.md)
+- [Improvement Roadmap](./ROADMAP.md)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Status
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Core app structure, authentication, dashboard UI, Prisma setup, and Solana dependencies are in place. The next major step is production-grade wallet connection, quote routing, transaction signing, and swap confirmation.
